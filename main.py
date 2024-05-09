@@ -4,8 +4,8 @@ import rcu
 # The robot class
 class RobotController:
     @staticmethod
-    def set_motor_straight(motor1, motor2, speed):
-        rcu.SetMotorStraight(motor1, motor2, speed)
+    def set_motor_straight(motor_no_1, motor_no_2, speed):
+        rcu.SetMotorStraight(motor_no_1, motor_no_2, speed)
 
 
 # entry point
