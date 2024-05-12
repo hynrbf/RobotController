@@ -47,11 +47,22 @@ class ColorController:
 
             rcu.SetWaitForTime(0.5)
 
+    @staticmethod
+    def display_ultrasonic_values_in_screen():
+        while True:
+            display = str(rcu.GetLightSensor(1)) + " " + str(rcu.GetLightSensor(2)) + " " + str(
+                rcu.GetLightSensor(3)) + " " + str(rcu.GetLightSensor(4)) + " " + str(
+                rcu.GetLightSensor(5)) + " " + str(rcu.GetLightSensor(6)) + " " + str(rcu.GetLightSensor(7))
+            rcu.SetDisplayString(1, display, ColorController._displayTextYellowColor,
+                                 ColorController._screenBackgroundBlackColor)
+            rcu.SetWaitForTime(0.5)
+
 
 # entry point
 def main():
     # MotorController.set_motor_straight(50)
-    ColorController.display_color_in_screen()
+    # ColorController.display_color_in_screen()
+    ColorController.display_ultrasonic_values_in_screen()
 
 
 main()
