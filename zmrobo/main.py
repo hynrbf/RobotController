@@ -35,6 +35,10 @@ class ColorController:
                 rcu.SetDisplayString(1, display, ColorController._displayTextYellowColor,
                                      ColorController._screenBackgroundGreenColor)
 
+            if rcu.GetColorSensor(1, 4) == SensorColors.Green:
+                display = "Green color detected"
+                rcu.SetDisplayString(1, display, ColorController._displayTextYellowColor,
+                                     ColorController._screenBackgroundGreenColor)
             rcu.SetWaitForTime(0.5)
 
 
