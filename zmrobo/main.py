@@ -13,7 +13,7 @@ class SensorColors:
 
 class ColorController:
     _displayTextYellowColor = 0xFFE0
-    _screenBackgroundGreenColor = 0x07E0
+    _screenBackgroundGreenColor = 0x0000
 
     @staticmethod
     def display_color_in_screen():
@@ -24,13 +24,11 @@ class ColorController:
                 display = "Black color detected"
                 rcu.SetDisplayString(1, display, ColorController._displayTextYellowColor,
                                      ColorController._screenBackgroundGreenColor)
-                continue
 
             if rcu.GetColorSensor(1, 4) == SensorColors.White:
                 display = "White color detected"
                 rcu.SetDisplayString(1, display, ColorController._displayTextYellowColor,
                                      ColorController._screenBackgroundGreenColor)
-                continue
 
             rcu.SetWaitForTime(0.5)
 
